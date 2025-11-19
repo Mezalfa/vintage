@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, NavLink } from 'react-router-dom'
+import Upload from './pages/Upload.jsx'
+import Results from './pages/Results.jsx'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+        <div className="container">
+            <header className="header">
+                <span className="logo"></span>
+                <div>
+                    <div className="h1">VintageVision</div>
+                    <div className="subtitle">Reinventing vintage discovery with AI</div>
+                </div>
+                <nav className="nav">
+                    <NavLink to="/" className="navlink">Upload</NavLink>
+                    <NavLink to="/results" className="navlink">Results</NavLink>
+                </nav>
+            </header>
+
+            <Routes>
+                <Route path="/" element={<Upload />} />
+                <Route path="/results" element={<Results />} />
+            </Routes>
+        </div>
+    )
 }
-
-export default App;
