@@ -1,26 +1,29 @@
-import { Routes, Route, NavLink } from 'react-router-dom'
-import Upload from './pages/Upload.jsx'
-import Results from './pages/Results.jsx'
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import SignIn from './pages/SignIn';
+import Upload from './pages/Upload';
+import Results from './pages/Results';
 
 export default function App() {
     return (
-        <div className="container">
-            <header className="header">
-                <span className="logo"></span>
-                <div>
-                    <div className="h1">VintageVision</div>
-                    <div className="subtitle">Reinventing vintage discovery with AI</div>
-                </div>
-                <nav className="nav">
-                    <NavLink to="/" className="navlink">Upload</NavLink>
-                    <NavLink to="/results" className="navlink">Results</NavLink>
-                </nav>
-            </header>
-
+        <div className="d-flex flex-column min-vh-100">
+            <Navbar />
+            
             <Routes>
-                <Route path="/" element={<Upload />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/upload" element={<Upload />} />
                 <Route path="/results" element={<Results />} />
             </Routes>
+
+            <footer className="text-center py-4 bg-dark text-light mt-auto">
+                © 2025 Vintage Vision. All Rights Reserved.
+            </footer>
         </div>
-    )
+    );
 }
