@@ -5,24 +5,11 @@
     --nav-h: 56px;
     --border: #e5e7eb;
 }
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding-top: var(--nav-h);
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 /* Hero Section */
 .hero {
-    background-image: url('/images/mondrian.jpg');
+    background-image: url('../public/images/mondrian.jpg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     background-color: #000;
     min-height: 100vh;
@@ -63,63 +50,71 @@ body {
     color: #495057;
     line-height: 1.6;
     max-width: 700px;
-    margin: 0 auto 1.5rem auto;
+    //margin:
 }
-
-.about-logo {
-    margin-bottom: 1.5rem;
-    border-radius: 12px;
-}
-
-.section-divider {
-    width: 60px;
-    border-top: 3px solid #343a40;
-    margin: 1rem auto 2rem auto;
-}
-
-/* Sign In Page */
-.card-elev {
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 14px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.strength-bar {
-    height: 6px;
-    border-radius: 4px;
-    background: #e9ecef;
-    overflow: hidden;
-}
-
-.strength-fill {
-    height: 100%;
-    width: 0%;
-    transition: width 0.2s ease;
-}
-
-.strength-weak { background: #dc3545; }
-.strength-fair { background: #fd7e14; }
-.strength-good { background: #ffc107; }
-.strength-strong { background: #28a745; }
-
-.side-illustration {
-    max-width: 480px;
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Upload Section */
-#photoUpload {
-    max-width: 420px;
-    width: 100%;
-}
-
-#upload .text-center {
+body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    padding-top: var(--nav-h);
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container and Header */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background: #282c34;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #a0aec0;
+}
+
+.nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navlink {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.navlink:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navlink.active {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* Upload Page Styles */
@@ -170,6 +165,7 @@ body {
     display: flex;
     gap: 12px;
     margin-top: 16px;
+    justify-content: center;
 }
 
 .btn-primary {
@@ -274,13 +270,19 @@ body {
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .section-title {
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 12px;
+    margin-top: 20px;
     color: #111827;
+}
+
+.section-title:first-child {
+    margin-top: 0;
 }
 
 .kv {
@@ -407,11 +409,6 @@ body {
     color: #9ca3af;
     background: #f3f4f6;
     border-radius: 12px;
-}
-
-/* Footer always at bottom */
-footer {
-    margin-top: auto;
 }
 
 /* Utilities */
